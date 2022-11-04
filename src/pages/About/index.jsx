@@ -24,7 +24,7 @@ const About = () => {
         }
     }
 
-    const percentage = 90;
+    const percentage = 100;
 
     return (
         <>

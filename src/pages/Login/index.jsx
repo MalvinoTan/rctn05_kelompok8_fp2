@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
 import { auth } from "../../api";
@@ -13,12 +13,14 @@ const Login = () => {
 
     const authenticate = localStorage.getItem("auth");
 
-    if (authenticate) {
-        authenticate.roles === "user" ?
-            navigate("/")
-            :
-            navigate("/admin")
-    }
+    useEffect(() => {
+        if (authenticate) {
+            authenticate.roles === "user" ?
+                navigate("/")
+                :
+                navigate("/admin")
+        }
+    })
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");

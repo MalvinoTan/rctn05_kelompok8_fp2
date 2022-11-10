@@ -3,6 +3,8 @@ import styles from "./style.module.css";
 import Header from "../../components/Header";
 import AboutSection from "../../components/AboutSection";
 import SectionHeader from "../../components/SectionHeader";
+import malvino from "../../assets/img/malvino.jpeg";
+import taofik from "../../assets/img/taofik.jpg";
 
 const About = () => {
     const aboutData = {
@@ -12,7 +14,8 @@ const About = () => {
             progress: [
                 "Pengembangan aplikasi website",
                 "Melakukan deployment"
-            ]
+            ],
+            image: malvino
         },
         taofik: {
             id: "RCTN-KS05-025",
@@ -20,7 +23,8 @@ const About = () => {
             progress: [
                 "Pembuatan desain figma",
                 "Pembuatan panduan dan cara penggunaan aplikasi"
-            ]
+            ],
+            image: taofik
         }
     }
 

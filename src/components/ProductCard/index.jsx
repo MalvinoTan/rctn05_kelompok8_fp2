@@ -40,14 +40,23 @@ const ProductCard = ({ data }) => {
 
     return (
         <Col>
-            <Card style={{ minHeight: "30rem" }} className="m-2 mt-4">
-                <Card.Img variant="top" src={data.image} alt="thumbnail" style={{ height: "15rem" }} />
-                <Card.Body>
+            <Card style={{ display: "flex", justifyContent: "space-around", minHeight: "28rem" }} className="m-2 mt-4">
+                <Card.Img variant="top" src={data.image} alt="thumbnail" style={{ width: "65%", height: "12rem", padding: "1rem", margin: "0 auto" }} />
+                <Card.Body style={{ flex: "none" }}>
                     <Card.Title>{data.title}</Card.Title>
                     <Card.Subtitle className="my-3">{data.category}</Card.Subtitle>
-                    <Card.Text>{data.description}</Card.Text>
-                    <Button variant="info" as={Link} to={`/product-detail/${data.id}`}>Detail</Button>{" "}
-                    <Button as={Link} variant="success" onClick={(e) => handleAdd(e, data)}>Add to Cart</Button>
+                    <Card.Text style={{
+                        whiteSpace: "nowrap",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis"
+                    }}
+                    >
+                        {data.description}
+                    </Card.Text>
+                    <div>
+                        <Button variant="info" as={Link} to={`/product-detail/${data.id}`}>Detail</Button>{" "}
+                        <Button as={Link} variant="success" onClick={(e) => handleAdd(e, data)}>Add to Cart</Button>
+                    </div>
                 </Card.Body>
             </Card>
         </Col>
